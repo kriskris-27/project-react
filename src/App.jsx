@@ -1,13 +1,20 @@
+import { useState } from 'react';
 import './App.css'
+import { Firstcomponent } from './components/Firstcomponent';
 
 function App() {
-    let x="Kris";
-    let array=["user1","user2","user3","user4"]
 
+    const [x,setx] =useState(0)
+    const btnClick=()=>{
+        console.log("btn clicked");
+        setx(x+1)
+        console.log(x);
+    }
   return (
     <>
     {x}
-    {array.map((user, index) => {return <h2 key={index}>{user}</h2>})}
+    <button onClick={()=>{btnClick()}}>Click ME</button>
+    <Firstcomponent/>
     </>
   )
 }
